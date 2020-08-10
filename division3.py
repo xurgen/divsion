@@ -3,7 +3,7 @@
 
 Version: 0.5
 Author: 金淼
-Date: 2020-08-09
+Date: 2020-08-08
 """
 # -*- coding: utf-8 -*- 
 
@@ -13,7 +13,7 @@ class div(object):
         '''判断输入的字符是数字还是字符串'''
         c = 0
         for i in numword:
-            if ord(i) >= 48 and ord(i)<=57 or ord(i)==46:
+            if ord(i) >= 48 and ord(i)<=57 or ord(i)==46 or ord(i)==45:
                 c=c+1
                 if c>=len(numword):
                     num = eval(numword)
@@ -42,18 +42,18 @@ class div(object):
 
 
     def divjs(self,div1,div2):       #数据计算函数
-        '''求二个数的除法函数，被除数小于除数，要求重新输入。'''
-        if div1 < div2:
-            print("除数大于被除数，请从新输入！")
-            print("=================")
-            return 
-        if  div1/div2 == div1//div2:     #判断是否能整除（能整除）
+        '''求二个数的除法函数。'''
+        # if div1 < div2:
+        #     print("除数大于被除数，请从新输入！")
+        #     print("=================")
+        #     return 
+        if  div1/div2 == div1//div2 or abs(div1)<abs(div2):     #判断是否能整除（能整除）
             quotient = div1/div2
             print("{} / {} = {}".format(div1,div2,quotient))
             print("=================")
         else:                            #不能整除
             quotient = div1//div2
-            remainder = div1%div2
+            remainder = (div1)%div2
             print("{} / {} = {} 余 {}".format(div1,div2,quotient,remainder))
             print("=================")
         return
