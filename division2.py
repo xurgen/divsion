@@ -17,7 +17,7 @@ def inputstr1():
     while True:
         inpstr1 = input("请输入一个被除数： ")
         divnum1 = dv.num_word(inpstr1)
-        if type(divnum1) ==str:
+        if type(divnum1) == str:
             if len(divnum1) > 1:
                 print(f"你输入的数不符合要求，请重新输入！{divnum1}")
             elif len(divnum1) == 1:
